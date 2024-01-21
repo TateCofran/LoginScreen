@@ -19,6 +19,7 @@ import project.loginscreen.components.ButtonComponent
 import project.loginscreen.components.ClickableLoginTextComponent
 import project.loginscreen.components.DividerComponent
 import project.loginscreen.components.HeadingTextComponent
+import project.loginscreen.components.IconComponent
 import project.loginscreen.components.MyTextFieldComponent
 import project.loginscreen.components.NormalTextComponent
 import project.loginscreen.components.PasswordFieldComponent
@@ -61,6 +62,10 @@ fun LoginScreen() {
             ClickableLoginTextComponent(tryingToLogin = false, onTextSelected ={
                 AppRouter.navigateTo(Screen.SignUpScreen)
             })
+
+            Spacer(modifier = Modifier.height(80.dp))
+
+            IconComponent(painterResource = R.drawable.ic_camera)
         }
     }
     SystemBackButtonHandler {

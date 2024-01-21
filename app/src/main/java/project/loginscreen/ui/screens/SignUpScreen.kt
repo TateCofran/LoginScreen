@@ -20,6 +20,7 @@ import project.loginscreen.components.CheckboxComponent
 import project.loginscreen.components.ClickableLoginTextComponent
 import project.loginscreen.components.DividerComponent
 import project.loginscreen.components.HeadingTextComponent
+import project.loginscreen.components.IconComponent
 import project.loginscreen.components.MyTextFieldComponent
 import project.loginscreen.components.NormalTextComponent
 import project.loginscreen.components.PasswordFieldComponent
@@ -71,6 +72,10 @@ fun SignUpScreen() {
             ClickableLoginTextComponent(tryingToLogin = true, onTextSelected ={
                 AppRouter.navigateTo(Screen.LoginScreen)
             })
+
+            Spacer(modifier = Modifier.height(80.dp))
+
+            IconComponent(painterResource = R.drawable.ic_camera)
         }
 
     }
