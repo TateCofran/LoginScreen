@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import project.loginscreen.navigation.AppRouter
 import project.loginscreen.navigation.Screen
+import project.loginscreen.ui.screens.CameraScreen
 import project.loginscreen.ui.screens.LoginScreen
 import project.loginscreen.ui.screens.SignUpScreen
 import project.loginscreen.ui.screens.TermsAndConditionsScreen
@@ -28,6 +29,9 @@ fun LoginScreenApp() {
                 }
                 is Screen.LoginScreen ->{
                     LoginScreen()
+                }
+                is Screen.CameraScreen ->{
+                    CameraScreen()
                 }
             }
         }

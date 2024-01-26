@@ -68,4 +68,14 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    //// CAMERA STUFF ////
+    implementation ("androidx.camera:camera-camera2:1.4.0-alpha03")
+    implementation ("androidx.camera:camera-lifecycle:1.4.0-alpha03")
+    implementation ("androidx.camera:camera-view:1.4.0-alpha03")
+    implementation ("androidx.camera:camera-extensions:1.4.0-alpha03")
+
+    //// ACCOMPANIST ////
+    implementation ("com.google.accompanist:accompanist-permissions:0.32.0")
+
 }

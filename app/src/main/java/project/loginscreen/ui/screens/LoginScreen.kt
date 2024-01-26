@@ -16,10 +16,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import project.loginscreen.R
 import project.loginscreen.components.ButtonComponent
+import project.loginscreen.components.ClickableCameraTextComponent
 import project.loginscreen.components.ClickableLoginTextComponent
 import project.loginscreen.components.DividerComponent
 import project.loginscreen.components.HeadingTextComponent
-import project.loginscreen.components.IconComponent
 import project.loginscreen.components.MyTextFieldComponent
 import project.loginscreen.components.NormalTextComponent
 import project.loginscreen.components.PasswordFieldComponent
@@ -63,9 +63,11 @@ fun LoginScreen() {
                 AppRouter.navigateTo(Screen.SignUpScreen)
             })
 
-            Spacer(modifier = Modifier.height(80.dp))
+            Spacer(modifier = Modifier.height(40.dp))
 
-            IconComponent(painterResource = R.drawable.ic_camera)
+            ClickableCameraTextComponent(onTextSelected = {
+                AppRouter.navigateTo(Screen.CameraScreen)
+            })
         }
     }
     SystemBackButtonHandler {

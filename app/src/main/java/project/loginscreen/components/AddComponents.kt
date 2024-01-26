@@ -331,13 +331,40 @@ fun UnderLinedTextComponent(value:String){
         textDecoration = TextDecoration.Underline
     )
 }
-
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun IconComponent(painterResource: Int){
-    IconButton(onClick = { /*TODO*/ },
-        modifier = Modifier.fillMaxWidth()) {
-        Icon(painter = painterResource(id = painterResource), contentDescription = null)
-        
+fun ClickableCameraTextComponent(onTextSelected:(String)->Unit){
+    val initialText = "Login with"
+    val loginText = " Camera"
+
+    val annotatedString = buildAnnotatedString {
+        append(initialText)
+        withStyle(style = SpanStyle(color = Primary)) {
+            pushStringAnnotation(tag = loginText, annotation = loginText)
+            append(loginText)
+        }
     }
+    ClickableText(
+        modifier = Modifier
+            .fillMaxWidth()
+            .heightIn(min = 40.dp),
+        style = TextStyle(
+            fontSize = 21.sp,
+            fontWeight = FontWeight.Normal,
+            fontStyle = FontStyle.Normal,
+            textAlign = TextAlign.Center
+        ),
+        text = annotatedString, onClick = {offset ->
+            annotatedString.getStringAnnotations(offset,offset)
+                .firstOrNull().also { span ->
+                    if (span != null) {
+                        Log.d("ClickableTextComponent", "{${span.item}")
+                    }
+
+                    if (span != null) {
+                        if(span.item == loginText){
+                            onTextSelected(span.item)
+                        }
+                    }
+                }
+        })
 }
